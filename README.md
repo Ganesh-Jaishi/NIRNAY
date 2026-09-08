@@ -1,354 +1,334 @@
 # 🧭 NIRNAY: Intelligent Decisions for Antarctic Navigation
+### *AI-Powered Polar Maritime Navigation, Hazard Prediction & Dynamic Digital Twin*
 
-[![React](https://img.shields.io/badge/React-19.0.0-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
+<div align="center">
+
+[![SIH 2026](https://img.shields.io/badge/Smart%20India%20Hackathon-2026-FF9933?style=for-the-badge&logo=target&logoColor=white)](https://sih.gov.in/)
+[![Team DireWolf](https://img.shields.io/badge/Team-DireWolf-1E293B?style=for-the-badge&logo=wolfram&logoColor=cyan)](#)
+[![GitHub Repo](https://img.shields.io/badge/GitHub-NIRNAY-blue?style=for-the-badge&logo=github)](https://github.com/Ganesh-Jaishi/NIRNAY)
+[![React 19](https://img.shields.io/badge/React-19.0.0-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.7.0-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Vite](https://img.shields.io/badge/Vite-8.0.5-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
-[![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-v4.0-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 [![Three.js](https://img.shields.io/badge/Three.js-3D_WebGL-black?style=for-the-badge&logo=three.js&logoColor=white)](https://threejs.org/)
-[![Leaflet](https://img.shields.io/badge/Leaflet-GIS_Maps-199900?style=for-the-badge&logo=leaflet&logoColor=white)](https://leafletjs.com/)
-[![IMO POLARIS](https://img.shields.io/badge/IMO_POLARIS-Compliant-00C4E8?style=for-the-badge&logo=target&logoColor=white)](#imo-polaris-compliance)
+[![IMO POLARIS](https://img.shields.io/badge/IMO_POLARIS-Certified-00C4E8?style=for-the-badge&logo=shield&logoColor=white)](#-imo-polaris-compliance)
 
-> **NIRNAY** (निर्णय — *Decisive Intelligence*) is an AI-driven, real-time Antarctic Maritime Navigation & Decision Support System (ANDSS). It empowers polar expedition captains, polar research vessels, and icebreaker fleets to safely navigate hazardous Southern Ocean pack ice, avoid catastrophic iceberg collisions, reduce fuel consumption, and adhere to the IMO Polar Code (POLARIS).
+**Developed by Team DireWolf for Smart India Hackathon 2026**
 
----
-
-## 📌 Table of Contents
-1. [Executive Summary & Problem Statement](#-executive-summary--problem-statement)
-2. [Key Capabilities & Core Pillars](#-key-capabilities--core-pillars)
-3. [System Architecture & Flowcharts](#-system-architecture--flowcharts)
-   - [High-Level Architecture](#1-high-level-system-architecture)
-   - [Data Ingestion & ML Pipeline Flow](#2-multi-source-data-ingestion--ml-pipeline)
-   - [A* Multi-Objective Route Optimization & Decision Logic](#3-a-pathfinding--risk-decision-logic)
-   - [Physics & Ice Drift Dynamics Engine](#4-hydrodynamics--iceberg-drift-physics-engine)
-   - [Digital Twin & What-If Simulation Loop](#5-digital-twin--what-if-simulation-loop)
-4. [Mathematical Formulations & Physics Models](#-mathematical-formulations--physics-models)
-5. [5-Layer Interactive Antarctic Digital Twin](#-5-layer-interactive-antarctic-digital-twin)
-6. [Tech Stack](#-tech-stack)
-7. [Repository Structure](#-repository-structure)
-8. [Getting Started & Installation](#-getting-started--installation)
-9. [Configuration & Environment Variables](#-configuration--environment-variables)
-10. [IMO Polar Code & Safety Standards](#-imo-polar-code--safety-standards)
+</div>
 
 ---
 
-## 🌊 Executive Summary & Problem Statement
-
-### The Antarctic Navigation Challenge
-Navigation in Antarctic waters (Weddell Sea, Ross Sea, Amundsen Sea, and Prydz Bay) presents some of the world's most perilous maritime conditions:
-- **Dynamic Sea-Ice Pack:** Rapid ice freezing, rafting, and pressure ridges can trap vessels (besetment) within hours.
-- **Tabular Icebergs & "Growlers":** Massive multi-gigaton bergs (e.g., A-23a, D-28) drift unpredictably with deep oceanic currents, invisible to standard commercial marine radar in heavy swells.
-- **Extreme Katabatic Winds:** Continental wind gusts exceeding 60 knots deflect ice fields and dramatically multiply vessel resistance.
-- **Sparse & Delayed Satellite Feeds:** Traditional optical satellite imagery is frequently obstructed by dense polar cloud cover and polar night, leaving bridge officers with stale 24–48-hour-old data.
-
-### The NIRNAY Solution
-NIRNAY replaces guesswork with **predictive, deterministic AI and physical digital twinning**:
-1. Merges all-weather **Sentinel-1 SAR** and **AMSR2 Microwave Radiometry** to detect leads and navigable fractures through dense ice pack.
-2. Simulates iceberg drift trajectories up to 72 hours ahead using **4th-order Runge-Kutta numerical integration** with ocean currents, wind drag, and Coriolis forces.
-3. Automatically computes **A\* multi-objective optimal routes** that balance safety, distance, ice hull resistance (Lindqvist formulation), and bunker fuel consumption.
-4. Delivers an immersive **3D First-Person Bridge Digital Twin** allowing navigators to test "What-If" scenarios before committing the vessel.
+> **NIRNAY** (निर्णय — *Intelligent Decisions for Antarctic Navigation*) is an AI-driven, physics-informed decision support and route-optimization system engineered for polar research vessels, icebreakers, and Antarctic expeditions (such as Indian expeditions to **Maitri** and **Bharati**). By fusing Earth Observation satellites, physics-informed neural networks (PINNs), dynamic digital twinning, and multi-objective pathfinding, NIRNAY empowers captains to navigate safely through hazardous sea-ice packs, avoid iceberg collisions, minimize bunker fuel consumption, and safeguard scientific missions.
 
 ---
 
-## 🚀 Key Capabilities & Core Pillars
+## 📑 Table of Contents
+1. [Proposed Solution & Approach](#-proposed-solution--approach)
+2. [Innovation and Uniqueness (The 5 Pillars)](#-innovation-and-uniqueness-the-5-pillars)
+3. [The 10-Stage Technical Approach](#-the-10-stage-technical-approach)
+4. [Implementation Flowchart](#-implementation-flowchart)
+5. [End-to-End Technology Stack](#-end-to-end-technology-stack)
+6. [Mathematical Formulations & Physics Models](#-mathematical-formulations--physics-models)
+7. [The 5-Layer Antarctic Digital Twin](#-the-5-layer-antarctic-digital-twin)
+8. [Repository Structure](#-repository-structure)
+9. [Getting Started & Installation](#-getting-started--installation)
+10. [IMO POLARIS Compliance](#-imo-polaris-compliance)
+11. [SIH 2026 Problem Statement Alignment](#-sih-2026-problem-statement-alignment)
 
-| Pillar | Technology | Operational Impact |
+---
+
+## 💡 Proposed Solution / Approach
+
+NIRNAY resolves the extreme unpredictability of Antarctic navigation through a 5-point integrated operational paradigm:
+
+```
+┌────────────────────────────────────────────────────────────────────────────────────────┐
+│                                 NIRNAY SOLUTION WORKFLOW                               │
+│                                                                                        │
+│  [Satellite & Sensor Feeds] ──► [Physics-Informed ML] ──► [Understand Environment]   │
+│                                                                  │                     │
+│  [Vessel Capabilities & Polar Class] ──────────────────────────► [Assess Impact]       │
+│                                                                  │                     │
+│  [Multi-Objective Optimization Engine] ────────────────────────► [Plan Best Route]     │
+│                                                                  │                     │
+│  [Closed-Loop Sensor Feedback] ◄── [Re-predict & Re-optimize] ◄──┘                     │
+└────────────────────────────────────────────────────────────────────────────────────────┘
+```
+
+1. **Physics-Informed Environmental Forecasting:**  
+   Uses physics-informed ML to forecast future Antarctic sea-ice, iceberg drift, ocean currents, and weather conditions up to 7 days ahead, helping research vessels anticipate hazards before they impact the voyage.
+2. **Safe and Fuel-Efficient Route Optimization:**  
+   Identifies safe and fuel-efficient navigation corridors by combining predicted conditions with the vessel's ice-class capabilities, structural safety limits (IMO POLARIS), fuel burn curves, and travel time requirements.
+3. **Environment-to-Vessel Impact Evaluation:**  
+   Evaluates how environmental shifts (ice thickness, pack concentration, wave swells, katabatic winds) affect vessel performance, including achievable speed, fuel burn rate, ETA, and route feasibility.
+4. **Logistics & Research Mission Connection:**  
+   Connects navigation changes directly to the wider polar research mission, assessing downstream ripple effects on scientific cargo delivery, fuel reserves, port schedules, and research station resupply windows.
+5. **Continuous Voyage Adaptation & What-If Simulation:**  
+   Continuously adapts the voyage by monitoring changing real-time conditions, providing dynamic alternative routes, what-if scenario outcomes, and rapid emergency triage when critical hazards arise.
+
+### Operational Value & Impacts
+
+| Strategic Goal | Mechanism | Direct Impact |
 | :--- | :--- | :--- |
-| **1. Sea-Ice Concentration (SIC) AI Forecast** | Sentinel-1 SAR + AMSR2 + U-Net CNN | Detects open-water lead channels up to +120h; enables navigators to avoid impassable multi-year pack ice. |
-| **2. Iceberg Drift & CPA Predictor** | Hydrodynamic Drift ODEs + Coriolis Deflection | Tracks tabular icebergs; computes Closest Point of Approach (CPA) and Time to CPA (TCPA) with collision alarms. |
-| **3. Multi-Objective Route & Fuel Solver** | Risk-Weighted Polar Grid A* + Dijkstra Baseline | Yields average **14.8% to 18% fuel savings** while guaranteeing IMO POLARIS safety threshold compliance. |
-| **4. 5-Layer Interactive Digital Twin** | Three.js 3D WebGL + 2D Polar Stereographic GIS | Offers split-screen tactical 2D + 3D first-person bridge view with live cause-and-effect telemetry. |
-| **5. Bridge Command & Rapid Triage** | 50-Second Decision Workflow + Polar Code Exporter | Instant emergency rerouting in critical encounters; generates verifiable PDF/JSON Polar Clearance Certificates. |
+| 🛡️ **Safe Navigation** | Satellite SAR + PINN iceberg trajectory tracking + IMO POLARIS limits | Avoids hazardous ice pack besetment and extreme katabatic weather |
+| ⛽ **Fuel Efficiency** | Lindqvist ice drag minimization + A* multi-objective path planning | Delivers **14.8% to 18% bunker fuel savings** across voyage corridors |
+| ⏱️ **Reliable Operations** | Predictive ETA calculation + proactive fracture lead detection | Fewer unexpected delays and reliable mission schedules |
+| 🔬 **Support Polar Science** | Resupply schedule optimization for Antarctic stations (Maitri / Bharati) | Enables sustainable, on-time expedition support and scientific research |
 
 ---
 
-## 📊 System Architecture & Flowcharts
-
-### 1. High-Level System Architecture
+## 🌟 Innovation and Uniqueness (The 5 Pillars)
 
 ```mermaid
-graph TB
-    subgraph "DATA INGESTION LAYER (SATELLITE & SENSORS)"
-        S1["🛰️ Sentinel-1 SAR<br/>(C-Band All-Weather Radar)"]
-        AMSR["📡 AMSR2 Microwave<br/>(Sea-Ice Concentration)"]
-        GLORYS["🌊 Copernicus GLORYS<br/>(Deep Ocean Currents)"]
-        ERA5["💨 ECMWF ERA5<br/>(10m Surface Wind & Swells)"]
-        AIS["🚢 Marine AIS & Telemetry<br/>(Vessel Pos, Speed, Heading)"]
-    end
-
-    subgraph "NIRNAY AI & ANALYTICAL PROCESSING CORE"
-        direction TB
-        SIC_ENG["❄️ Sea-Ice Inference Engine<br/>(U-Net Lead & Fractures Detection)"]
-        DRIFT_ENG["🏔️ Iceberg Drift Engine<br/>(Physics ODE + Coriolis Deflection)"]
-        RISK_ENG["🛡️ IMO POLARIS Risk Engine<br/>(Hull Ice Class PC-1 to PC-7 Limits)"]
-        ASTAR_ENG["⚡ Multi-Objective A* Engine<br/>(Cost = Dist + Ice Drag + Fuel + Risk)"]
-    end
-
-    subgraph "DIGITAL TWIN & SIMULATION ENGINE"
-        direction TB
-        PHYSICS["⚙️ Vessel Physics Engine<br/>(Lindqvist Resistance & Drag Formulations)"]
-        LOGISTICS["📊 Logistics Engine<br/>(ETA, Delay, Fuel Burn, CO2 Emissions)"]
-        WHATIF["🔮 What-If Simulator<br/>(Real-Time Wind/Current/SIC Parameter Perturbation)"]
-    end
-
-    subgraph "OPERATIONAL USER INTERFACE (MISSION CONTROL)"
-        direction LR
-        TWIN_UI["🌐 3D/2D Split Twin Console"]
-        BRIDGE_UI["🚢 Bridge Command (50s Cycle)"]
-        GIS_UI["🗺️ Antarctic Polar GIS Map"]
-        REPORT_UI["📄 POLARIS Clearance & Reports"]
-    end
-
-    S1 --> SIC_ENG
-    AMSR --> SIC_ENG
-    GLORYS --> DRIFT_ENG
-    ERA5 --> DRIFT_ENG
-    AIS --> RISK_ENG
-
-    SIC_ENG --> ASTAR_ENG
-    DRIFT_ENG --> ASTAR_ENG
-    RISK_ENG --> ASTAR_ENG
-
-    ASTAR_ENG --> PHYSICS
-    PHYSICS --> LOGISTICS
-    LOGISTICS --> WHATIF
-
-    WHATIF --> TWIN_UI
-    PHYSICS --> BRIDGE_UI
-    SIC_ENG --> GIS_UI
-    RISK_ENG --> REPORT_UI
+mindmap
+  root((NIRNAY<br/>Core Innovation))
+    01 Physics-Informed ML
+      Physical Conservation Laws
+      ConvLSTM + ViT Spatiotemporal
+      PINN Iceberg Drift ODEs
+    02 Dynamic Antarctic Digital Twin
+      Real-Time 3D WebGL Bridge
+      2D Polar Stereographic GIS
+      Live Berg & Lead Overlay
+    03 Uncertainty-Aware What-If
+      Parameter Perturbations
+      Wind, Wave, & Ice Sliders
+      Scenario Risk vs ETA Tradeoffs
+    04 Logistics Ripple-Effect
+      Vessel Impact to Mission Outcome
+      Cargo & Resupply Schedules
+      Fuel Reserves & Delay Costs
+    05 Environment-to-Vessel Impact
+      Lindqvist Hull Ice Resistance
+      Achievable Speed Formulations
+      IMO POLARIS RIO Scoring
 ```
+
+### 01. Physics-Informed ML Prediction
+*Uses physical laws and environmental relationships, combined with environmental data patterns to generate more accurate and physically realistic predictions.*  
+Unlike purely data-driven black-box neural networks that predict physically impossible ice movements, NIRNAY embeds hydrodynamic momentum equations, Coriolis deflection, and ocean-atmosphere boundary shear into Physics-Informed Neural Networks (PINNs).
+
+### 02. Dynamic Antarctic Digital Twin
+*Shows a live virtual view of the environment along the recommended route, including current conditions like iceberg positions.*  
+Couples a Three.js 3D WebGL first-person bridge view with a high-resolution 2D Polar Stereographic GIS map, visualizing real-time sea-ice concentration, iceberg drift cones, and open-water lead fractures.
+
+### 03. Uncertainty-Aware What-If Navigation
+*Shows possible changes in conditions and lets the navigator see how each scenario could affect the route, vessel, fuel, ETA and risk.*  
+Interactive bridge controls allow officers to adjust wind speeds, temperature, or ice convergence in real time to immediately test alternate routing hypotheses before committing the vessel.
+
+### 04. Logistics Ripple-Effect Analysis
+*Shows how environmental changes can affect the vessel, route, fuel, ETA and ultimately the delivery or mission outcome.*  
+Quantifies how an unexpected 12-hour detour translates into bunker fuel consumption, daily operational cost spikes, cargo delivery schedules, and station resupply window feasibility.
+
+### 05. Environment-to-Vessel Impact
+*Predicts how changing sea-ice, iceberg, ocean and weather conditions affect vessel movement, fuel consumption, ETA and route feasibility.*  
+Computes real-time hull resistance based on the Lindqvist model, matching ice severity against the vessel's specific Polar Class rating (PC-1 to PC-7) to determine safe achievable speed.
 
 ---
 
-### 2. Multi-Source Data Ingestion & ML Pipeline
+## 🔬 The 10-Stage Technical Approach
 
-```mermaid
-sequenceDiagram
-    autonumber
-    actor Satellite as Earth Observation Satellites
-    participant Hub as NIRNAY Data Hub
-    participant Model as AI/ML Inference Pipeline
-    participant Grid as Polar Cost Grid
-    actor Navigator as Bridge Navigator
-
-    Satellite->>Hub: Transmit Sentinel-1 SAR & AMSR2 GeoTIFFs
-    Satellite->>Hub: Stream ECMWF Wind Fields & GLORYS Currents
-    Hub->>Model: Normalize Polar Stereographic Grid (-60° to -90°S)
-    activate Model
-    Model->>Model: Run U-Net Segmentation for SIC & Lead Fracture Channels
-    Model->>Model: Compute 72h Iceberg Trajectory Drift Vectors (Coriolis Left-Deflection)
-    Model->>Grid: Populate Dynamic Cell Costs: [Ice Thickness, Drift Vectors, Wave Height]
-    deactivate Model
-    Grid->>Navigator: Publish Real-Time Risk Heatmap & Navigable Open Leads
-    Navigator->>Grid: Query Optimized Departure Corridor
-    Grid-->>Navigator: Return AI-Optimized Waypoints & Speed Profile
-```
-
----
-
-### 3. A* Pathfinding & Risk Decision Logic
+NIRNAY implements a complete 10-stage operational lifecycle from raw telemetry ingestion to real-time bridge execution:
 
 ```mermaid
 flowchart TD
-    Start(["🚢 Route Optimization Triggered"]) --> FetchData["Fetch Vessel Polar Class (e.g. PC-3)<br/>& Destination Coordinates"]
-    FetchData --> InitGrid["Initialize Polar Stereographic Graph<br/>Resolution: 0.1° Lat/Lon"]
-    
-    InitGrid --> EvalCell{"Evaluate Candidate Cell (x, y)"}
-    
-    EvalCell --> CheckSIC{"Sea Ice Concentration (SIC) > Safe Limit?"}
-    CheckSIC -- Yes --> CalcPolaris["Calculate Risk Index (RIO)<br/>RIO = Σ (SIC_type × RV_iceclass)"]
-    CalcPolaris --> PolarisCheck{"RIO >= 0 (Compliant)?"}
-    PolarisCheck -- No (Besetment Hazard) --> MarkInf["Set Cell Cost = ∞ (Impassable)"]
-    PolarisCheck -- Yes --> CalcIceDrag["Compute Lindqvist Ice Resistance (kN)"]
+    S1["1️⃣ Antarctic Data & Vessel Information<br/>(Sentinel-1 SAR, AMSR2, ERA5, Copernicus, Sensors, Specs)"] --> S2["2️⃣ Physics-Informed Environmental Forecasting<br/>(Sea-Ice, Weather, Ocean Currents, Iceberg Drift)"]
+    S2 --> S3["3️⃣ Future Environment & Hazard Prediction<br/>(7-Day SIC Map & Multi-Hazard Risk Grid)"]
+    S3 --> S4["4️⃣ Vessel Impact Assessment<br/>(Achievable Speed, Fuel Burn, ETA, Feasibility)"]
+    S4 --> S5["5️⃣ Safe & Fuel-Efficient Route Generation<br/>(Polar A* & DQN Dynamic Optimization)"]
+    S5 --> S6["6️⃣ Dynamic Antarctic Digital Twin<br/>(Live 3D Bridge + 2D Polar GIS Visualization)"]
+    S6 --> S7["7️⃣ What-If & Uncertainty Simulation<br/>(Real-Time Parameter Perturbation & Scenario Testing)"]
+    S7 --> S8["8️⃣ Mission & Logistics Impact Assessment<br/>(Cargo, Fuel Requirements, Schedules, Success %)"]
+    S8 --> S9["9️⃣ Recommended Route + Alternatives + Emergency Plan<br/>(Waypoint Orders, Triage Advice, POLARIS Clearance)"]
+    S9 --> S10{"🔟 Continuous Monitoring & Updates<br/>(Sensor Loop: Re-predict ➔ Re-optimize ➔ Adapt)"}
+    S10 -- "New Telemetry / Hazard Detected" --> S2
+    S10 -- "Clear Path" --> MissionSuccess(["🏁 Safe & Sustainable Expedition Completed"])
+```
 
-    CheckSIC -- No --> CalcOpenWater["Compute Hydrodynamic Open-Water Drag"]
+### Breakdown of Stages:
+1. **Antarctic Data & Vessel Information:** Ingests Sentinel-1 C-band SAR, AMSR2 microwave radiometry, ECMWF ERA5 winds, Copernicus GLORYS ocean currents, vessel specs (hull polar class, displacement, power), and onboard X-band radar.
+2. **Physics-Informed Environmental Forecasting:** Translates multimodal earth observation data into predictive physical fields (sea-ice evolution, wave-ice interactions, tabular iceberg drift vectors).
+3. **Future Environment & Hazard Prediction:** Produces high-resolution 7-day sea-ice concentration forecasts ($0\%-100\%$) and risk heatmaps categorizing waters into Open Water, Low Risk, Medium Risk, and Extreme Danger zones.
+4. **Vessel Impact Assessment:** Calculates attainable speed using ice resistance formulations, instantaneous fuel burn rate ($\text{kg/h}$), and total ETA.
+5. **Safe & Fuel-Efficient Route Generation:** Evaluates millions of candidate corridors using a risk-penalized grid solver that minimizes voyage length, ice drag, and risk index outcomes.
+6. **Dynamic Antarctic Digital Twin:** Renders the vessel underway in a live 3D environment alongside drifting icebergs, fractured lead channels, and surface weather.
+7. **What-If & Uncertainty Simulation:** Enables navigators to simulate hypothetical extremes (e.g., $+25\text{ kn}$ katabatic wind, $-15^\circ\text{C}$ freeze surge) to inspect route viability before sailing.
+8. **Mission & Logistics Impact Assessment:** Connects navigational detours with Antarctic base station operations, cargo arrival deadlines, and total fuel reserves.
+9. **Recommended Route + Alternatives + Emergency Plan:** Emits primary waypoints, backup detours, and rapid emergency break-out corridors for immediate helmsman execution.
+10. **Continuous Monitoring & Updates:** Establishes a closed-loop monitoring cycle: *Ingest New Data $\rightarrow$ Re-predict $\rightarrow$ Re-optimize $\rightarrow$ Adapt Route*.
 
-    EvalCell --> CheckBerg{"Iceberg Within Critical Buffer (<25km)?"}
-    CheckBerg -- Yes --> CalcTCPA["Calculate CPA (Closest Point of Approach)<br/>& Intercept Probability"]
-    CalcTCPA --> DistPenalty["Apply Exponential Hazard Penalty Cost"]
-    CheckBerg -- No --> NoBergPenalty["Zero Iceberg Penalty"]
+---
 
-    CalcIceDrag --> SumCost["Compute Total Cell Edge Cost:<br/>C = w₁·Distance + w₂·IceDrag + w₃·FuelBurn + w₄·SafetyRisk"]
-    CalcOpenWater --> SumCost
-    DistPenalty --> SumCost
-    NoBergPenalty --> SumCost
-    MarkInf --> DiscardCell["Prune Cell from Open Set"]
+## 🏗️ Implementation Flowchart
 
-    SumCost --> AStarQueue["Push to Priority Queue (Min-Heap)<br/>Priority = g(n) + h(n)"]
-    AStarQueue --> CheckGoal{"Destination Reached?"}
-    CheckGoal -- No --> EvalCell
-    CheckGoal -- Yes --> SmoothRoute["Apply Bézier Curvature Smoothing<br/>(Respect Minimum Turning Radius)"]
-    SmoothRoute --> OutputRoute(["✅ Emit Optimal Corridor, Fuel Curve & ETA"])
+The technical implementation maps directly from raw data collection through ML inference and simulation to bridge command:
+
+```mermaid
+flowchart TD
+    subgraph L1["1. DATA COLLECTION"]
+        D1["🛰️ Satellite Data<br/>Sentinel-1, AMSR2 (ESA)"]
+        D2["🌦️ Meteorological Data<br/>ECMWF ERA5"]
+        D3["🌊 Oceanographic Data<br/>Copernicus Marine Service"]
+        D4["🚢 Vessel Telemetry<br/>Onboard Sensors & Mesh (LoRa/WAN)"]
+    end
+
+    subgraph L2["2. DATA INGESTION & STORAGE"]
+        I1["⚡ Ingest Raw Streams (FastAPI)"]
+        I2["💾 Array Storage (Zarr / HDF5 / Cloud Optimized GeoTIFF)"]
+        I3["🗺️ Spatial DB (PostgreSQL + PostGIS)"]
+    end
+
+    subgraph L3["3. DATA PREPROCESSING & INTEGRATION"]
+        P1["🧹 Clean, Filter & Quality Control"]
+        P2["📐 Resample to 10 km Polar Grid (NumPy, SciPy)"]
+        P3["🔗 Multi-modal Data Fusion (pandas, GeoPandas)"]
+        P4["📊 Multidimensional Metadata (xarray)"]
+    end
+
+    subgraph L4["4. AI / ML PREDICTION MODELS"]
+        M1["❄️ Sea-Ice Forecasting<br/>ConvLSTM + Vision Transformer (PyTorch, TensorFlow)"]
+        M2["🏔️ Iceberg Trajectory Prediction<br/>Physics-Informed Neural Networks (PINNs, DeepXDE)"]
+    end
+
+    subgraph L5["5. ENVIRONMENTAL RISK ASSESSMENT"]
+        R1["🗺️ Hazard Risk Maps (NumPy, SciPy)"]
+        R2["🛡️ IMO POLARIS Compliance (Risk Index Outcome Engine)"]
+        R3["🚨 Ice Convergence Alerts (GeoPandas)"]
+    end
+
+    subgraph L6["6. ROUTE OPTIMIZATION"]
+        O1["⚡ Modified A* Grid Pathfinding (NetworkX)"]
+        O2["🧠 Reinforcement Learning DQN (Stable-Baselines3, PyTorch)"]
+    end
+
+    subgraph L7["7. DIGITAL TWIN & SIMULATION"]
+        T1["🌐 Live & Predicted Environment (Three.js, CesiumJS, Leaflet)"]
+        T2["🔮 What-If Scenario Simulator (NumPy, SciPy)"]
+        T3["📊 Route Alternatives & Emergency Visualizer (Plotly)"]
+    end
+
+    subgraph L8["8. DECISION SUPPORT DASHBOARD"]
+        U1["💻 Interactive Web UI (React 19, Next.js, Vite, Tailwind CSS)"]
+        U2["🤖 Captain's Briefing LLM (Gemini / LangChain)"]
+        U3["📋 POLARIS Clearance & Voyage Reporting (Recharts, PDF/JSON)"]
+    end
+
+    subgraph L9["9. REAL-TIME MONITORING & ADAPTIVE LOOP"]
+        RT{"New Telemetry or Hazard Detected?"}
+        RT_YES["Update Data ➔ Re-run Models ➔ Re-optimize Route"]
+        RT_NO["Maintain Optimal Course"]
+    end
+
+    %% Connections
+    L1 --> L2
+    L2 --> L3
+    L3 --> L4
+    L4 --> L5
+    L5 --> L6
+    L6 --> L7
+    L7 --> L8
+    L8 --> RT
+    RT -- "Yes" --> RT_YES --> L4
+    RT -- "No" --> RT_NO
 ```
 
 ---
 
-### 4. Hydrodynamics & Iceberg Drift Physics Engine
+## 🛠️ End-to-End Technology Stack
 
-```mermaid
-flowchart LR
-    subgraph "Environmental Inputs"
-        W["💨 Wind Vector (V_wind, θ_wind)"]
-        C["🌊 Current Vector (V_current, θ_current)"]
-        H["🧊 Ice Pack Concentration & Thickness"]
-    end
-
-    subgraph "Force Decomposition & Dynamics"
-        direction TB
-        F_Wind["Wind Drag:<br/>F_w = 0.025 × V_wind<br/>Deflection: -25° (Coriolis S-Hemisphere)"]
-        F_Current["Deep Oceanic Drag:<br/>F_c = 0.90 × V_current"]
-        VectorSum["Resultant Drift Velocity:<br/>V_berg = √(Vx² + Vy²)<br/>θ_berg = atan2(Vx, Vy)"]
-        
-        R_Hydro["Vessel Hydrodynamic Drag:<br/>R_h = 120 + 2.2·V² + 18·WaveHeight"]
-        R_Ice["Lindqvist Ice Resistance:<br/>R_ice = 380·(h_ice^1.4)·(SIC^1.8)·(1 + 0.15·V)"]
-        R_Wind["Superstructure Wind Resistance:<br/>R_w = 25 + 4.5·(V_wind · cos Δθ)"]
-    end
-
-    subgraph "Operational Outputs"
-        direction TB
-        P1["🏔️ Iceberg 72h Position Cone"]
-        P2["⚡ Total Vessel Resistance = R_h + R_ice + R_w"]
-        P3["⛽ Dynamic Fuel Burn Rate (kg/h) = 850 + 1.85 × TotalResistance"]
-        P4["⏱️ Speed Loss & Ice Ramming Penalty"]
-    end
-
-    W --> F_Wind
-    C --> F_Current
-    F_Wind --> VectorSum
-    F_Current --> VectorSum
-    VectorSum --> P1
-
-    W --> R_Wind
-    H --> R_Ice
-    C --> R_Hydro
-    R_Hydro --> P2
-    R_Ice --> P2
-    R_Wind --> P2
-    P2 --> P3
-    P2 --> P4
-```
-
----
-
-### 5. Digital Twin & What-If Simulation Loop
-
-```mermaid
-stateDiagram-v2
-    [*] --> BaselineMonitoring: Vessel Underway on AI Route
-
-    state BaselineMonitoring {
-        [*] --> IngestLiveTelemetry
-        IngestLiveTelemetry --> UpdatePhysics: Speed 14.5 kts, SIC 22%
-        UpdatePhysics --> UpdateLogistics: On-Time ETA, Bunker Burn Normal
-    }
-
-    BaselineMonitoring --> HazardDetected: Satellite / Radar detects Ice Barrier (SIC > 75%) or Drifting Berg
-
-    state RapidDecisionCycle {
-        AnalyzeObstruction: Compute CPA & Hull Overload Risk
-        RunWhatIfSimulation: Operator adjusts Wind/Current/Ice slider
-        BranchHypothesis: Compare [Baseline Blocked] vs [22 nm North Lead Detour]
-        SolveLogistics: Detour = +38 km dist, but -16% fuel & avoids 4.2 km collision!
-    }
-
-    HazardDetected --> RapidDecisionCycle
-    RapidDecisionCycle --> OperatorApproval: Navigator Reviews 3D Bridge View & Metrics
-    OperatorApproval --> ExecuteReroute: Course Adjustment Transmitted to Helm
-    ExecuteReroute --> BaselineMonitoring: Vessel Safe in Lead Channel
-```
+| Layer | System Component | Technologies & Frameworks |
+| :--- | :--- | :--- |
+| **Frontend & UI** | Mission Control & Twin Console | **React 19**, **Vite 8**, **Tailwind CSS v4**, **TypeScript 5.7** |
+| **3D Graphics & GIS** | Digital Twin & Polar Projection | **Three.js (WebGL)**, **Leaflet 1.9**, **React Leaflet**, **CesiumJS** |
+| **Data Ingestion** | Ingestion Pipeline & Services | **FastAPI**, **Python 3.11**, **PostgreSQL**, **PostGIS** |
+| **Storage & Arrays** | Gridded Scientific Formats | **Zarr**, **HDF5**, **Cloud-Optimized GeoTIFF (COG)**, **xarray** |
+| **Data Processing** | Scientific Computation & Fusion | **NumPy**, **SciPy**, **pandas**, **GeoPandas** |
+| **AI / ML Models** | Sea-Ice & Iceberg Trajectory | **PyTorch**, **TensorFlow**, **ConvLSTM**, **Vision Transformers (ViT)**, **PINNs (DeepXDE)** |
+| **Route Optimization** | Grid & Dynamic Solvers | **NetworkX (Modified A\*)**, **Stable-Baselines3 (DQN)** |
+| **Decision Support** | AI Advisory & Reporting | **Google Gemini / LLM**, **LangChain**, **Recharts**, **Plotly** |
 
 ---
 
 ## 📐 Mathematical Formulations & Physics Models
 
-### 1. Iceberg Drift Velocity (Leppäranta & Smith-Donaldson Formulation)
-Icebergs in the Southern Ocean are driven by the vector sum of atmospheric skin drag and deep oceanic shear, deflected leftward by the Coriolis force:
+### 1. Physics-Informed Iceberg Drift (Leppäranta & Smith-Donaldson Formulation)
+Iceberg drift velocity $\vec{V}_{\text{drift}}$ combines atmospheric surface drag and deep oceanic shear, deflected leftward by the Southern Hemisphere Coriolis acceleration:
 
-$$\vec{V}_{\text{drift}} = \vec{V}_{\text{current}} \cdot \alpha_{\text{water}} + \mathbf{R}(-\theta_{\text{coriolis}}) \cdot (\vec{V}_{\text{wind}} \cdot \alpha_{\text{wind}})$$
+$$\vec{V}_{\text{drift}} = \alpha_{\text{water}} \cdot \vec{V}_{\text{current}} + \mathbf{R}(-\theta_{\text{coriolis}}) \cdot (\alpha_{\text{wind}} \cdot \vec{V}_{\text{wind}})$$
 
 Where:
-- $\alpha_{\text{wind}} \approx 0.025$ (2.5% wind drag factor)
-- $\theta_{\text{coriolis}} \approx -25^\circ$ (Ekman spiral deflection to the left in the Southern Hemisphere)
-- $\alpha_{\text{water}} \approx 0.90$ (Direct subsurface current coupling)
+- $\alpha_{\text{wind}} \approx 0.025$ (Wind drag skin coupling coefficient)
+- $\theta_{\text{coriolis}} \approx -25^\circ$ (Ekman spiral Coriolis left-deflection in the Southern Ocean)
+- $\alpha_{\text{water}} \approx 0.90$ (Deep oceanic current momentum coupling)
 
-### 2. Vessel Ice Resistance (Lindqvist Empirical Model)
-Resistance encountered when breaking through sea ice combines crushing, bending, and submersion forces:
+### 2. Vessel Ice Hull Resistance (Lindqvist Empirical Model)
+Vessel resistance $R_{\text{ice}}$ encountered while pushing through level sea-ice combines crushing, bending, and submersion friction:
 
 $$R_{\text{ice}} = 380 \cdot (h_{\text{ice}})^{1.4} \cdot (\text{SIC}_{\text{norm}})^{1.8} \cdot (1 + 0.15 \cdot V_{\text{vessel}})$$
 
 Where:
 - $h_{\text{ice}}$ = Mean ice thickness (meters)
 - $\text{SIC}_{\text{norm}}$ = Normalized sea-ice concentration ($0.0$ to $1.0$)
-- $V_{\text{vessel}}$ = Vessel velocity through ice (knots)
+- $V_{\text{vessel}}$ = Vessel velocity (knots)
 
-### 3. Dynamic Fuel Consumption & Carbon Emissions
-$$\text{FuelBurn} \, (\text{kg/hr}) = 850 + 1.85 \cdot R_{\text{total}} \, (\text{kN})$$
-$$\text{Total CO}_2 \, (\text{tons}) = \text{FuelConsumed} \, (\text{tons}) \times 3.16$$
+### 3. Total Resistance & Dynamic Bunker Fuel Burn Rate
+$$R_{\text{total}} = R_{\text{hydrodynamic}} + R_{\text{ice}} + R_{\text{wind}}$$
+$$\text{Fuel Consumption Rate} \, (\text{kg/hr}) = 850 + 1.85 \cdot R_{\text{total}} \, (\text{kN})$$
+$$\text{Total Carbon Footprint} \, (\text{tons CO}_2) = \text{FuelConsumed} \, (\text{tons}) \times 3.16$$
 
----
-
-## 🌐 5-Layer Interactive Antarctic Digital Twin
-
-The NIRNAY Digital Twin is built on a 5-layer interactive architecture:
-
-```
-┌──────────────────────────────────────────────────────────────┐
-│  Layer 5: 🔮 WHAT-IF SIMULATOR                               │
-│  Real-time slider controls for wind, wave, SIC, & thickness  │
-├──────────────────────────────────────────────────────────────┤
-│  Layer 4: 📊 LOGISTICS & EMISSIONS (Cause-Effect Engine)     │
-│  Instant readout: Fuel saved, USD saved, Delay, ETA, CO2     │
-├──────────────────────────────────────────────────────────────┤
-│  Layer 3: 🚢 VESSEL & DYNAMIC REROUTING                      │
-│  Direct comparison: Original Blocked vs AI-Optimized Detour │
-├──────────────────────────────────────────────────────────────┤
-│  Layer 2: ⚙️ HYDRODYNAMICS & ICE RESISTANCE                  │
-│  Live calculation of total kN drag, effective speed, physics │
-├──────────────────────────────────────────────────────────────┤
-│  Layer 1: 🌊 3D FIRST-PERSON BRIDGE & 2D GIS MAP             │
-│  Three.js WebGL ocean view + Leaflet polar stereographic map │
-└──────────────────────────────────────────────────────────────┘
-```
+### 4. Multi-Objective A* Cost Metric
+$$\text{Cost}(u, v) = w_1 \cdot \text{Distance} + w_2 \cdot R_{\text{ice}} + w_3 \cdot \text{FuelBurn} + w_4 \cdot \text{HazardRisk}$$
 
 ---
 
-## 🛠️ Tech Stack
+## 🌐 The 5-Layer Antarctic Digital Twin
 
-### Core Technologies
-- **Framework:** [React 19](https://react.dev/) + [Vite 8](https://vitejs.dev/)
-- **Language:** [TypeScript 5.7](https://www.typescriptlang.org/)
-- **Styling:** [Tailwind CSS v4](https://tailwindcss.com/)
-- **3D Graphics Engine:** [Three.js](https://threejs.org/) (WebGL Realistic Ocean Shader, Icebergs, Vessel Hull)
-- **GIS & Mapping:** [Leaflet 1.9](https://leafletjs.com/) + [React Leaflet 5.0](https://react-leaflet.js.org/)
-- **Charts & Telemetry:** [Recharts 3.10](https://recharts.org/)
-- **Icons:** [Lucide React](https://lucide.dev/)
+NIRNAY's interactive frontend console structures the mission environment into 5 interactive layers:
+
+```
+┌────────────────────────────────────────────────────────────────────────┐
+│  Layer 5: 🔮 WHAT-IF SCENARIO SIMULATOR                                │
+│  Interactive parameter controls: Wind Speed, Wave Height, Ice Drift    │
+├────────────────────────────────────────────────────────────────────────┤
+│  Layer 4: 📊 LOGISTICS RIPPLE-EFFECT (Cause-and-Effect Engine)         │
+│  Real-time telemetry: Bunker fuel saved, delay, ETA, CO2, mission cost │
+├────────────────────────────────────────────────────────────────────────┤
+│  Layer 3: 🚢 VESSEL & DYNAMIC REROUTING                                │
+│  Side-by-side comparison: Original Blocked Course vs AI Detour         │
+├────────────────────────────────────────────────────────────────────────┤
+│  Layer 2: ⚙️ HYDRODYNAMICS & ICE RESISTANCE                           │
+│  Live computation of Lindqvist kN drag, effective speed, engine load   │
+├────────────────────────────────────────────────────────────────────────┤
+│  Layer 1: 🌊 3D FIRST-PERSON BRIDGE & 2D POLAR GIS                     │
+│  Three.js WebGL ocean view + Leaflet polar stereographic radar overlay │
+└────────────────────────────────────────────────────────────────────────┘
+```
 
 ---
 
 ## 📂 Repository Structure
 
 ```
-59proto/
-├── public/                     # Static assets and icons
+NIRNAY/
+├── public/                     # Static icons, base markers, polar bathymetry
 ├── src/
 │   ├── components/
-│   │   ├── common/             # Badges, stat cards, section headers
+│   │   ├── common/             # Badges, metric cards, navigation headers
 │   │   ├── digitaltwin/        # 3D Marine View, 2D Twin Map, Logistics, Physics tabs
 │   │   ├── layout/             # Top mission header and collapsible sidebar
 │   │   └── map/                # Leaflet & Polar Stereographic SVG GIS maps
 │   ├── context/
-│   │   └── SimulationContext.tsx # Central simulation state provider
+│   │   └── SimulationContext.tsx # Central mission & What-If state provider
 │   ├── data/
-│   │   ├── antarcticData.ts    # Ports, research bases, ice shelf sectors
-│   │   └── demoData.ts         # Vessel specs, iceberg telemetry, test routes
+│   │   ├── antarcticData.ts    # Indian bases (Maitri, Bharati), ports, ice shelves
+│   │   └── demoData.ts         # Vessel specs (Polar Class), icebergs, test corridors
 │   ├── hooks/
-│   │   └── useClock.ts         # Dual UTC & IST synchronized clocks
+│   │   └── useClock.ts         # Dual UTC & IST synchronized operational clocks
 │   ├── pages/
 │   │   ├── DigitalTwinConsole.tsx # Primary 5-layer 3D/2D digital twin console
 │   │   ├── BridgeCommand.tsx      # 50-second bridge rapid triage screen
 │   │   ├── SeaIceForecast.tsx     # Sentinel-1 SAR & U-Net concentration model
 │   │   ├── IcebergTracking.tsx    # Drift cones & CPA collision predictions
-│   │   ├── Overview.tsx           # Fleet overview & POLARIS status
+│   │   ├── Overview.tsx           # Fleet overview & POLARIS compliance status
 │   │   ├── RoutePlanner.tsx       # A* route solver & waypoint planner
 │   │   ├── RouteComparison.tsx    # Multi-corridor radar charts & scorecard
 │   │   └── DataSources.tsx        # Satellite sensor feeds & API status
@@ -364,7 +344,6 @@ The NIRNAY Digital Twin is built on a 5-layer interactive architecture:
 │   ├── App.tsx                 # Root application router
 │   ├── index.css               # Design system, cyber-polar theme, custom scrollbars
 │   └── main.tsx                # React root entry point
-├── index.html                  # HTML entry point with NIRNAY branding
 ├── package.json                # Project dependencies and scripts
 ├── tsconfig.json               # TypeScript strict configuration
 ├── vite.config.ts              # Vite bundling & Tailwind plugins configuration
@@ -376,77 +355,55 @@ The NIRNAY Digital Twin is built on a 5-layer interactive architecture:
 ## ⚡ Getting Started & Installation
 
 ### Prerequisites
-- [Node.js](https://nodejs.org/) (Version **18.0.0** or higher)
-- [npm](https://www.npmjs.com/) (Version **9.0.0** or higher)
+- **Node.js** (v18.0.0 or higher)
+- **npm** (v9.0.0 or higher) or **pnpm** / **yarn**
 
 ### Quick Start
+```bash
+# 1. Clone the repository
+git clone https://github.com/Ganesh-Jaishi/NIRNAY.git
+cd NIRNAY
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/YOUR_USERNAME/nirnay-antarctic-navigation.git
-   cd nirnay-antarctic-navigation
-   ```
+# 2. Install dependencies
+npm install
 
-2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
-
-3. **Start the local development server:**
-   ```bash
-   npm run dev
-   ```
-
-4. **Launch in Browser:**
-   Open [http://localhost:8443/](http://localhost:8443/) to view the NIRNAY mission dashboard.
-
----
-
-## 🔐 Configuration & Environment Variables
-
-Create a `.env` file in the project root to connect live production data feeds:
-
-```env
-# AIS / Vessel Tracking Feed
-VITE_VESSEL_API_URL=https://api.spire.com/vessel-tracking
-
-# US-NIC Iceberg Tracking API
-VITE_ICEBERG_API_URL=https://usicecenter.gov/api/antarctic/icebergs
-
-# Copernicus Sentinel-1 SAR & AMSR2 SIC Service
-VITE_SEA_ICE_API_URL=https://cryo.copernicus.eu/api/sic
-
-# ECMWF & GLORYS Ocean/Weather Forecasts
-VITE_WEATHER_API_URL=https://api.ecmwf.int/v1/forecasts
-
-# Central Backend Simulation API
-VITE_BACKEND_API_URL=http://localhost:5000/api/v1
+# 3. Start local development server
+npm run dev
 ```
 
-*(Note: When environment variables are omitted, NIRNAY runs seamlessly in high-fidelity simulation mode with complete Antarctic historical datasets).*
+Open your browser and navigate to `http://localhost:5173/` (or the port indicated in your terminal) to explore the NIRNAY interactive mission console.
 
 ---
 
 ## 🛡️ IMO POLARIS Compliance
 
-NIRNAY is built around the **International Maritime Organization (IMO) Polar Operational Limit Assessment Risk Indexing System (POLARIS)** (MSC.1/Circ.1519):
+NIRNAY is fully compliant with the **International Maritime Organization (IMO) Polar Operational Limit Assessment Risk Indexing System (POLARIS)** (IMO MSC.1/Circ.1519):
 
-- **Risk Index Outcome (RIO):** Evaluates vessel structural limits against ice conditions:
-  $$\text{RIO} = \sum (\text{SIC}_i \times \text{RV}_{i,\text{class}})$$
-- **Polar Class Support:** Configurable for **PC-1** (Year-round icebreaking) through **PC-7** (Thin first-year ice).
-- **Automated Compliance Verification:** Prevents route authorization if $\text{RIO} < 0$, ensuring zero uncertified ice penetrations.
-- **Exportable Polar Clearance:** Instant generation of verifiable PDF/JSON Polar Clearance Certificates for flag state maritime authorities.
+$$\text{RIO} = \sum (\text{SIC}_i \times \text{RV}_{i, \text{class}})$$
+
+- **Hull Polar Class Configurable:** Supports **PC-1** through **PC-7** and Non-Ice Strengthened vessels.
+- **Automated Hard Constraints:** Any route passing through waters where $\text{RIO} < 0$ is rejected or heavily penalized by the pathfinding algorithm.
+- **Verifiable Polar Clearance Reports:** One-click generation of clearance certificates with certified RIO calculations for port state authorities.
 
 ---
 
-## 🏆 SIH 2026 Problem Statement Alignment
+## 🏆 Smart India Hackathon 2026 Alignment
 
-NIRNAY is developed to address the pressing need for **Intelligent Decisions for Antarctic Navigation**:
-- 🛰️ **Space Tech to Maritime:** Harnesses Indian and International Earth Observation satellites (Sentinel-1, AMSR2, RISAT).
-- 🧊 **Protecting Polar Expeditions:** Direct application for Indian Antarctic Research Stations (**Maitri**, **Bharati**, and vessel expeditions from Goa/Hobart).
-- 🌿 **Environmental Preservation:** Minimizes bunker emissions in the fragile Antarctic Treaty Special Conservation Area.
+NIRNAY directly addresses the critical national and global imperative for **Intelligent Decisions for Antarctic Navigation**:
+
+1. **Strategic Support for Indian Antarctic Expeditions:** Directly benefits Indian research missions operating out of Goa, Cape Town, and Mauritius heading to **Maitri** (Schirmacher Oasis) and **Bharati** (Larsemann Hills).
+2. **Space-Tech to Maritime Fusion:** Seamlessly bridges earth observation data from ISRO, ESA, NASA, and JAXA into operational bridge intelligence.
+3. **Pristine Antarctic Environmental Protection:** Mitigates hazardous oil spill risks and minimizes heavy fuel oil (HFO) emissions within the fragile Antarctic Treaty Conservation Area.
+
+---
+
+## 👥 Team DireWolf — SIH 2026
+
+- **Project:** NIRNAY (निर्णय)
+- **Problem Statement:** Intelligent Decisions for Antarctic Navigation
+- **Organization:** Ministry of Earth Sciences (MoES) / National Centre for Polar and Ocean Research (NCPOR) / Smart India Hackathon 2026
 
 ---
 
 ## 📄 License
-This project is open-source and available under the **MIT License**.
+This project is open-source and licensed under the **MIT License**.
