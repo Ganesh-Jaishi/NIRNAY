@@ -1,5 +1,5 @@
 # 🧭 NIRNAY: Intelligent Decisions for Antarctic Navigation
-### *AI-Powered Polar Maritime Navigation, Hazard Prediction & Dynamic Digital Twin*
+### *AI-Enabled Antarctic Sea-Ice, Iceberg Trajectory, and Navigation Decision Support System*
 
 <div align="center">
 
