@@ -5,11 +5,9 @@
 
 [![SIH 2026](https://img.shields.io/badge/Smart%20India%20Hackathon-2026-FF9933?style=for-the-badge&logo=target&logoColor=white)](https://sih.gov.in/)
 [![Team DireWolf](https://img.shields.io/badge/Team-DireWolf-1E293B?style=for-the-badge&logo=wolfram&logoColor=cyan)](#)
-[![GitHub Repo](https://img.shields.io/badge/GitHub-NIRNAY-blue?style=for-the-badge&logo=github)](https://github.com/Ganesh-Jaishi/NIRNAY)
-[![React 19](https://img.shields.io/badge/React-19.0.0-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.7.0-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Three.js](https://img.shields.io/badge/Three.js-3D_WebGL-black?style=for-the-badge&logo=three.js&logoColor=white)](https://threejs.org/)
-[![IMO POLARIS](https://img.shields.io/badge/IMO_POLARIS-Certified-00C4E8?style=for-the-badge&logo=shield&logoColor=white)](#-imo-polaris-compliance)
+
+
+
 
 **Developed by Team DireWolf for Smart India Hackathon 2026**
 
@@ -32,7 +30,7 @@
 8. [Repository Structure](#-repository-structure)
 9. [Getting Started & Installation](#-getting-started--installation)
 10. [IMO POLARIS Compliance](#-imo-polaris-compliance)
-11. [SIH 2026 Problem Statement Alignment](#-sih-2026-problem-statement-alignment)
+11. [ Problem Statement Alignment](#-problem-statement-alignment)
 
 ---
 
@@ -413,7 +411,7 @@ $$\text{RIO} = \sum (\text{SIC}_i \times \text{RV}_{i, \text{class}})$$
 
 ---
 
-## 🏆 SIH 2026 Problem Statement Alignment
+## Problem Statement Alignment
 
 NIRNAY directly addresses the critical national and global imperative for **Intelligent Decisions for Antarctic Navigation**:
 
