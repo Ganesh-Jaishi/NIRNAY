@@ -40,18 +40,44 @@
 
 NIRNAY resolves the extreme unpredictability of Antarctic navigation through a 5-point integrated operational paradigm:
 
-```
-┌────────────────────────────────────────────────────────────────────────────────────────┐
-│                                 NIRNAY SOLUTION WORKFLOW                               │
-│                                                                                        │
-│  [Satellite & Sensor Feeds] ──► [Physics-Informed ML] ──► [Understand Environment]   │
-│                                                                  │                     │
-│  [Vessel Capabilities & Polar Class] ──────────────────────────► [Assess Impact]       │
-│                                                                  │                     │
-│  [Multi-Objective Optimization Engine] ────────────────────────► [Plan Best Route]     │
-│                                                                  │                     │
-│  [Closed-Loop Sensor Feedback] ◄── [Re-predict & Re-optimize] ◄──┘                     │
-└────────────────────────────────────────────────────────────────────────────────────────┘
+```mermaid
+flowchart LR
+    subgraph Inputs ["📥 MULTI-SOURCE INPUTS"]
+        direction TB
+        SAT["🛰️ Satellite Data<br/>• Sentinel-1 SAR & AMSR2<br/>• Ocean conditions & weather"]
+        SENS["📡 Onboard Sensors<br/>• Wind, temp, wave height<br/>• Real-time bridge updates"]
+        VESSEL["🚢 Vessel Information<br/>• Specifications & Polar Class<br/>• Fuel consumption curves<br/>• Route & mission constraints"]
+        HIST["📜 Historical Data<br/>• Past ice conditions<br/>• Seasonal freeze patterns<br/>• Historical routes"]
+    end
+
+    subgraph Core ["🧠 AI/ML & OPTIMIZATION CORE"]
+        direction TB
+        ML["🤖 Physics-Informed AI/ML Models<br/>Forecast environment and predict hazards"]
+        BANNER["🎯 Understand the environment ➔ Assess the impact ➔ Plan the best route"]
+        OPT["⚡ Route Optimization & Simulation<br/>Find safe, fuel-efficient routes with real-time adaptation"]
+        ML --> BANNER
+        BANNER --> OPT
+    end
+
+    subgraph Outcomes ["🎯 OPERATIONAL OUTCOMES"]
+        direction TB
+        SAFE["🛡️ Safe Navigation<br/>Avoid hazardous ice & extreme weather"]
+        FUEL["⛽ Fuel Efficiency<br/>Optimized routes reduce fuel burn"]
+        OPS["⏱️ Reliable Operations<br/>Fewer delays, better mission planning"]
+        RES["🔬 Support Research<br/>Enable successful & sustainable missions"]
+    end
+
+    SAT --> ML
+    SENS --> ML
+    VESSEL --> ML
+    HIST --> ML
+
+    OPT --> SAFE
+    OPT --> FUEL
+    OPT --> OPS
+    OPT --> RES
+
+    OPT -. "🔄 Continuous Monitoring & Updates<br/>( Re-predict  |  Re-optimize  |  Adapt )" .-> ML
 ```
 
 1. **Physics-Informed Environmental Forecasting:**  
@@ -387,7 +413,7 @@ $$\text{RIO} = \sum (\text{SIC}_i \times \text{RV}_{i, \text{class}})$$
 
 ---
 
-## 🏆 Smart India Hackathon 2026 Alignment
+## 🏆 SIH 2026 Problem Statement Alignment
 
 NIRNAY directly addresses the critical national and global imperative for **Intelligent Decisions for Antarctic Navigation**:
 
